@@ -1,0 +1,12 @@
+{
+  "name": "Fold League Paper Football",
+  "short_name": "Fold League",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#11171a",
+  "theme_color": "#11171a",
+  "icons": [
+    {"src":"./assets/home-icon.png","sizes":"512x512","type":"image/png","purpose":"any"}
+  ]
+}

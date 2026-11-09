@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#11171a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Call the play and flick the pass in Fold League, a folded-paper football arcade game for one or two iPads.">
+<title>Fold League • Paper Football Arcade</title>
+<link rel="manifest" href="./game.webmanifest">
+<link rel="apple-touch-icon" href="./assets/home-icon.png">
+<link rel="icon" type="image/svg+xml" href="./assets/mark.svg">
+<link rel="preload" href="./assets/display.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="./assets/cover.webp" as="image">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="home">
+<header class="mast">
+  <div class="mast-inner">
+    <a class="brand" href="./" aria-label="Fold League home"><img src="./assets/mark.svg" alt=""><span>FOLD LEAGUE</span></a>
+    <div class="mast-tools"><button class="guide-button" data-open-guide><span class="ico" data-icon="book"></span><span>Field guide</span></button><span class="divider"></span><button id="sound" class="icon-button" aria-label="Turn sound on" title="Turn sound on"></button></div>
+  </div>
+</header>
+<main>
+  <section class="hero" aria-label="Paper Football Arcade">
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="kicker"><span></span> COOK COUNTY COOKS ARCADE</div>
+      <h1>PAPER<br><em>FOOTBALL</em></h1>
+      <p>Call the play. Flick the pass.</p>
+      <div class="hero-buttons"><button class="primary" id="solo"><span class="ico" data-icon="play"></span> Play solo</button><button class="secondary" id="pair"><span class="ico" data-icon="ipads"></span> Two iPads</button></div>
+    </div>
+    <div class="hero-bottom"><span class="stitched"></span></div>
+  </section>
+  <section class="setup">
+    <div class="section-heading"><div class="heading-left"><span class="orange-rule"></span><h2>Match setup</h2></div><div class="quarters"><span class="ico" data-icon="clock"></span> 2 MIN QUARTERS</div></div>
+    <div class="team-tabs"><div role="group" aria-label="Choose which side to configure"><button id="homeTab" aria-pressed="true">Home team</button><button id="awayTab" aria-pressed="false">Away team</button></div><span id="matchup"></span></div>
+    <div id="teams" class="team-grid" role="group" aria-label="Choose a team"></div>
+    <div class="ball-line"><div><div class="micro">EQUIPMENT</div><h3>Paper weight</h3></div><div id="stocks" class="stocks" role="group" aria-label="Choose paper weight"></div></div>
+    <div class="home-foot"><span>FOLD LEAGUE <b>/</b> COOK COUNTY COOKS ARCADE</span><button data-open-guide>Controls &amp; scoring <span aria-hidden="true">↗</span></button></div>
+  </section>
+</main>
+</div>
+<main id="game" hidden>
+  <div id="field-area"><canvas id="field" aria-label="Football field. Flick to pass or kick and swipe sideways to cut."></canvas><div id="live-tip"></div><div id="event" aria-live="polite"></div></div>
+  <div class="dashboard">
+    <div class="scorebar">
+      <div class="team-score" id="score0"></div><div class="center-clock"><b id="clock">2:00</b><span id="period">Q1</span></div><div class="team-score" id="score1"></div>
+      <button id="pause" class="icon-button" aria-label="Pause game"><span class="ico" data-icon="pause"></span></button>
+    </div>
+    <div class="play-panel"><div class="down-strip"><strong id="down"></strong><span id="situ"></span></div><div id="controls"></div></div>
+  </div>
+</main>
+<dialog id="guide" class="sheet"><div class="sheet-content"><div class="sheet-heading"><div class="micro">FOLD LEAGUE</div><button data-close="guide" class="icon-button" aria-label="Close guide">×</button></div>
+<h2>Field guide</h2>
+<div class="guide-chunk"><h3>Moving the chains</h3><p>Gain 10 yards in four downs. A touchdown scores seven, including the extra point. Tap a play to snap the ball. On a pass, flick upfield toward a receiver, leading their route. On a run or after a catch, swipe sideways to cut. On defense, choose a coverage and swipe to steer a defender.</p></div>
+<div class="guide-chunk"><h3>Distance pays</h3><p>Choose a field goal on any down. The play card shows the kick distance, value and your fold’s maximum range. Flick straight upfield. Long attempts need more power and leave less room for error.</p><div class="kick-tiers"><span>UNDER 40 YD<b>3 PTS</b></span><span>40–49 YD<b>4 PTS</b></span><span>50–59 YD<b>5 PTS</b></span><span>60+ YD<b>6 PTS</b></span></div></div>
+<div class="guide-chunk"><h3>One field, two iPads</h3><p>Open the game on both iPads on the same Wi-Fi. The host chooses the two teams and paper weight and plays as the home team. Choose Two iPads on both, then host on one and join on the other. Lay them flat with the tops of the game screens touching at midfield. For the closest fit, use matching screen sizes, lock the same orientation, and launch from the Home Screen to hide the browser toolbar.</p></div>
+<button class="primary" data-close="guide">Got it <span aria-hidden="true">→</span></button>
+</div></dialog>
+<dialog id="break-sheet" class="sheet"><div class="sheet-content" id="break-content"></div></dialog>
+<noscript>This game needs JavaScript enabled in your browser.</noscript>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

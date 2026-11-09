@@ -1,0 +1,84 @@
+.pair-dialog {
+  --pair-surface: #171c1a;
+  --pair-line: #39413d;
+  --pair-muted: #a3ada6;
+  --pair-orange: #ff7943;
+  --pair-paper: #f5efdc;
+  --pair-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: dark;
+  width: min(calc(100vw - 32px), 490px);
+  max-width: none;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #565b51;
+  border-radius: 18px;
+  background: var(--pair-surface);
+  color: var(--pair-paper);
+  box-shadow: 0 32px 120px #000b;
+  font: 15px/1.45 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-align: left;
+  overscroll-behavior: contain;
+  z-index: 1000;
+}
+.pair-dialog * { box-sizing: border-box; }
+.pair-dialog::backdrop { background: #080c0bd9; backdrop-filter: blur(6px); }
+.pair-dialog.pair-fallback { position: fixed; inset: 0; box-shadow: 0 0 0 200vmax #080c0bf2; }
+.pair-card { padding: clamp(18px, 4vw, 30px); }
+.pair-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: -7px -7px 10px 0; }
+.pair-dialog .pair-label { font: 700 10px/1.4 var(--pair-mono); letter-spacing: .15em; text-transform: uppercase; color: var(--pair-muted); }
+.pair-top > .pair-label { color: var(--pair-orange); }
+.pair-top > .pair-label::before { content: ''; display: inline-block; width: 7px; height: 7px; background: var(--pair-orange); margin-right: 9px; transform: rotate(45deg); }
+.pair-dialog .pair-heading { margin: 0; letter-spacing: -.055em; font: 850 clamp(32px, 5vw, 44px)/.99 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--pair-paper); text-wrap: balance; outline: none; }
+.pair-dialog .pair-intro { margin: 14px 0 22px; color: #c4ccc3; font: inherit; line-height: 1.5; }
+.pair-dialog .pair-controls, .pair-dialog .pair-form, .pair-dialog .pair-manual-block, .pair-code-panel { display: grid; gap: 10px; }
+.pair-dialog .pair-manual-block + .pair-manual-block { margin-top: 7px; }
+.pair-dialog .pair-btn { appearance: none; display: inline-flex; justify-content: center; align-items: center; min-height: 45px; padding: 10px 15px; margin: 0; border-radius: 8px; border: 1px solid transparent; text-transform: none; letter-spacing: normal; color: var(--pair-paper); font: 700 15px/1.25 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-shadow: none; box-shadow: none; transform: none; background: transparent; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.pair-dialog .pair-btn:focus-visible, .pair-dialog .pair-input:focus-visible { outline: 2px solid var(--pair-orange); outline-offset: 3px; }
+.pair-dialog .pair-btn:disabled { opacity: .52; cursor: progress; }
+.pair-dialog .pair-btn:active:not(:disabled) { transform: translateY(1px); }
+.pair-dialog .pair-primary { color: #1a170f; background: var(--pair-orange); border-color: var(--pair-orange); }
+.pair-dialog .pair-secondary { border-color: #4a564d; background: #242d27; }
+.pair-dialog .pair-icon { width: 45px; min-width: 45px; height: 45px; background: transparent; font: 300 30px/1 sans-serif; color: #d3d8cb; }
+.pair-dialog .pair-text { padding: 4px 0; color: #cbd4c8; font: 600 13px/1.35 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-decoration: underline; text-decoration-color: #718175; text-underline-offset: 4px; }
+.pair-dialog .pair-option { display: flex; justify-content: flex-start; gap: 13px; width: 100%; padding: 13px 15px; text-align: left; background: #242d28; border-color: #3c493f; }
+.pair-dialog .pair-option:first-of-type { border-color: #9d6647; }
+.pair-role { flex: none; width: 36px; height: 38px; border: 1px solid #546152; border-radius: 4px; display: grid; place-items: center; background: #1b241e; color: #c4cdaf; font: 800 13px/1 var(--pair-mono); }
+.pair-option:first-of-type .pair-role { color: var(--pair-orange); border-color: #6b4d37; background: #2e271f; }
+.pair-option-text { display: grid; gap: 3px; }
+.pair-dialog .pair-option-text strong { font-size: 17px; color: var(--pair-paper); }
+.pair-dialog .pair-option-text small { font: 400 12px/1.35 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--pair-muted); }
+.pair-arrow { margin-left: auto; color: var(--pair-muted); font-size: 19px; }
+.pair-alignment { display: flex; gap: 15px; align-items: center; padding: 12px 0 16px; }
+.pair-alignment strong { color: #dce3d5; font-size: 13px; }
+.pair-dialog .pair-alignment p { margin: 3px 0 0; color: var(--pair-muted); font: 400 12px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.pair-diagram { display: flex; flex: none; flex-direction: column; gap: 2px; align-items: center; width: 62px; transform: rotate(-7deg); }
+.pair-tablet { position: relative; display: grid; place-items: center; width: 60px; height: 32px; border: 2px solid #84947f; border-radius: 5px; background: repeating-linear-gradient(0deg,#233a2d 0 5px,#435246 5px 6px); box-shadow: inset 0 0 0 2px #111711; }
+.pair-tablet b { position: relative; z-index: 1; padding: 2px; background: #25362a; font: 700 8px/1 var(--pair-mono); letter-spacing:.05em; color:#d6decb; }
+.pair-tablet:first-child b { transform: rotate(180deg); }
+.pair-tablet:first-child::after, .pair-tablet:last-child::before { position: absolute; content: ''; inset: auto 6px 0; height: 2px; background: var(--pair-orange); }
+.pair-tablet:last-child::before { top: 0; bottom: auto; }
+.pair-dialog .pair-input { appearance: none; display: block; width: 100%; margin: 0; padding: 12px 14px; border: 1px solid #4e5c51; border-radius: 8px; background: #101712; color: var(--pair-paper); font: 500 16px/1.4 var(--pair-mono); }
+.pair-dialog .pair-code { padding: 10px 14px; font: 750 clamp(24px, 5vw, 32px)/1.2 var(--pair-mono); text-transform: uppercase; letter-spacing: .18em; }
+.pair-dialog .pair-code::placeholder { color: #6b786c; }
+.pair-code-panel { padding: 14px; border: 1px solid #495547; background: #1e2921; border-radius: 11px; }
+.pair-dialog .pair-code-panel input { padding: 0; border: 0; background: none; color: #ffe8cb; font-size: clamp(29px, 6vw, 40px); }
+.pair-dialog .pair-long { font-size: 16px; min-height: 65px; max-height: 120px; resize: vertical; overflow-wrap: anywhere; }
+.pair-dialog .pair-long[readonly] { color: #abb8aa; }
+.pair-actions, .pair-foot { display: flex; gap: 8px 18px; flex-wrap: wrap; align-items: center; }
+.pair-foot { justify-content: space-between; }
+.pair-foot:not(:empty) { border-top: 1px solid var(--pair-line); margin-top: 10px; }
+.pair-dialog .pair-status { margin: 12px 0 0; color: #bac9b9; font: 500 13px/1.42 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.pair-dialog .pair-status:empty { margin: 0; }
+.pair-dialog .pair-status[data-kind=error] { color: #ffb38d; }
+@media (max-height: 540px) {
+  .pair-card { padding: 15px 22px; }
+  .pair-dialog .pair-intro { margin-bottom: 10px; }
+  .pair-alignment { padding: 2px 0 6px; }
+}
+@media (hover: hover) {
+  .pair-dialog .pair-option:hover, .pair-dialog .pair-secondary:hover { border-color: var(--pair-orange); }
+  .pair-dialog .pair-primary:hover { background: #ff9668; }
+}
